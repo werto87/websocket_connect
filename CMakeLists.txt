@@ -21,6 +21,7 @@ IF (BUILD_TESTS)
 ENDIF (BUILD_TESTS)
 add_executable(run_main main.cxx)
 target_link_libraries(run_main cxx_template)
+target_compile_definitions(run_main PUBLIC -DBOOST_ASIO_DISABLE_THREADS)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_custom_target(copy_compile_commands_json ALL
